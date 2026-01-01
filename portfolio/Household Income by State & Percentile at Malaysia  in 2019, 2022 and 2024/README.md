@@ -14,6 +14,7 @@
 
 * Visualization
 
+[Tableau Visualization](https://public.tableau.com/app/profile/aminuddin.samsudin/vizzes)
 ![alt text](<map vis-1.png>) 
 
 
