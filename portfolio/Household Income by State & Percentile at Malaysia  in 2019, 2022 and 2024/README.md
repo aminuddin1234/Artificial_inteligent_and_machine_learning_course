@@ -14,9 +14,9 @@
 
 * Visualization
 
-[Tableau Visualization](https://public.tableau.com/app/profile/aminuddin.samsudin/vizzes)
 ![alt text](<map vis-1.png>) 
 
+[Tableau Visualization](https://public.tableau.com/app/profile/aminuddin.samsudin/vizzes)
 
 * Datasets 
     - The datasets are sourced from the OPENDOSM ([Datasets household](https://open.dosm.gov.my/data-catalogue/hies_malaysia_percentile))
