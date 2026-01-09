@@ -4,7 +4,7 @@
     - In this project, I performed a comprehensive end-to-end data cleaning and transformation of a global layoffs dataset using MySQL. I focused on converting raw, inconsistent data into a high-integrity dataset ready for business intelligence and visualization. My process involved implementing advanced SQL techniques, including Common Table Expressions (CTEs) and Window Functions to identify and remove duplicate records.
 
 
-* Keyinsights :
+* Key insights :
 
 1. Advanced Data Deduplication
     - Methodology: I implemented Window Functions (ROW_NUMBER()) combined with Common Table Expressions (CTEs) to identify and isolate duplicate records.
