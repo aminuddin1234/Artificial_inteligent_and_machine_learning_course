@@ -1,0 +1,26 @@
+﻿restaurant_id,name,cuisine_type,price_range,halal_certified,address,avg_rating,location_city
+R001,Healthy Bites,Healthy,Medium,Yes,"123 Jalan Bukit, Kuala Lumpur",4.7,Kuala Lumpur
+R002,Green Leaf Cafe,Vegetarian,Budget,Yes,"456 Lorong Taman, Petaling Jaya",4.5,Petaling Jaya
+R003,Seafood Shack,Seafood,Premium,No,"789 Pantai Road, Kuala Lumpur",4.2,Kuala Lumpur
+R004,Nasi Lemak Stall,Malay,Budget,Yes,"101 Jalan Pasar, Shah Alam",4.8,Shah Alam
+R005,Italian Trattoria,Italian,Medium,No,"202 Mont Kiara, Kuala Lumpur",4.3,Kuala Lumpur
+R006,Sambal Corner,Malay,Budget,Yes,"303 Jalan Merdeka, Petaling Jaya",4.6,Petaling Jaya
+R007,Sushi Express,Japanese,Medium,No,"404 Bukit Bintang, Kuala Lumpur",4.4,Kuala Lumpur
+R008,Vegan Haven,Vegan,Budget,Yes,"505 SS2, Petaling Jaya",4.9,Petaling Jaya
+R009,Spice Garden,Indian,Medium,Yes,"606 Jalan Ipoh, Kuala Lumpur",4.5,Kuala Lumpur
+R010,Burger Joint,Western,Budget,No,"707 Jalan Tun Razak, Kuala Lumpur",4,Kuala Lumpur
+R011,Noodle House,Chinese,Medium,No,"808 Jalan Sultan, Kuala Lumpur",4.1,Kuala Lumpur
+R012,Teh Tarik Place,Malay,Budget,Yes,"909 Jalan Klang Lama, Kuala Lumpur",4.7,Kuala Lumpur
+R013,Pizza Palace,Italian,Medium,No,"1010 Damansara Heights, Kuala Lumpur",4.2,Kuala Lumpur
+R014,Rendang Master,Malay,Premium,Yes,"1111 Jalan Ampang, Kuala Lumpur",4.8,Kuala Lumpur
+R015,Dim Sum Delight,Chinese,Medium,No,"1212 Chinatown, Kuala Lumpur",4.3,Kuala Lumpur
+R016,Curry House,Indian,Budget,Yes,"1313 Brickfields, Kuala Lumpur",4.6,Kuala Lumpur
+R017,Steakhouse,Western,Premium,No,"1414 KLCC, Kuala Lumpur",4.4,Kuala Lumpur
+R018,Satay Station,Malay,Budget,Yes,"1515 Jalan Alor, Kuala Lumpur",4.9,Kuala Lumpur
+R019,Ramen Bar,Japanese,Medium,No,"1616 Jalan Bukit Bintang, Kuala Lumpur",4.2,Kuala Lumpur
+R020,Salad Bar,Healthy,Budget,Yes,"1717 TTDI, Petaling Jaya",4.5,Petaling Jaya
+R021,Bak Kut Teh House,Chinese,Budget,Yes,"1818 Jalan Sentul, Kuala Lumpur",4.7,Kuala Lumpur
+R022,Crepes Corner,French,Budget,No,"1919 Bangsar, Kuala Lumpur",4.3,Kuala Lumpur
+R023,Murtabak Stall,Malay,Budget,Yes,"2020 Jalan Tuanku Abdul Rahman, Kuala Lumpur",4.8,Kuala Lumpur
+R024,Thai Spice,Thai,Medium,Yes,"2121 Jalan Sultan Ismail, Kuala Lumpur",4.4,Kuala Lumpur
+R025,Dessert Paradise,Dessert,Budget,Yes,"2222 Jalan Bukit Bintang, Kuala Lumpur",4.6,Kuala Lumpur

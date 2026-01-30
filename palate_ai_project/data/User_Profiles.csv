@@ -1,0 +1,101 @@
+﻿user_id,dietary_restrictions,allergies,health_conditions,budget_range_myr,location_city,age_group
+U001,halal,none,diabetes,20-40,Kuala Lumpur,25-34
+U002,vegetarian,shellfish,hypertension,15-30,Petaling Jaya,35-44
+U003,none,gluten,celiac_disease,25-50,Shah Alam,18-24
+U004,halal,peanut,none,30-55,Kuala Lumpur,45-54
+U005,vegan,none,none,30-60,Petaling Jaya,25-34
+U006,halal,dairy,diabetes,15-35,Subang Jaya,35-44
+U007,none,shellfish_gluten,none,40-80,Kuala Lumpur,55-64
+U008,halal,none,hypertension,20-45,Ampang,18-24
+U009,vegetarian,none,none,25-55,Petaling Jaya,25-34
+U010,halal,peanut_shellfish,celiac_disease,30-60,Kuala Lumpur,45-54
+U011,none,none,diabetes,30-55,Shah Alam,65+
+U012,halal,dairy_gluten,none,35-70,Petaling Jaya,35-44
+U013,vegan,none,hypertension,20-40,Kuala Lumpur,25-34
+U014,halal,shellfish,none,15-30,Cheras,18-24
+U015,none,gluten_peanut,celiac_disease,50-100,Kuala Lumpur,55-64
+U016,halal,none,none,30-55,Petaling Jaya,25-34
+U017,vegetarian,dairy,diabetes,25-50,Shah Alam,35-44
+U018,halal,none,none,20-40,Kuala Lumpur,45-54
+U019,none,shellfish,none,30-60,Petaling Jaya,18-24
+U020,halal,gluten,celiac_disease,15-35,Kajang,25-34
+U021,vegan,peanut,none,40-80,Kuala Lumpur,35-44
+U022,halal,dairy_shellfish,hypertension,25-55,Petaling Jaya,55-64
+U023,none,none,none,30-55,Shah Alam,18-24
+U024,halal,gluten_peanut,diabetes,30-60,Kuala Lumpur,25-34
+U025,vegetarian,none,none,20-45,Petaling Jaya,45-54
+U026,halal,shellfish_gluten_peanut,celiac_disease,50-100,Kuala Lumpur,65+
+U027,none,dairy,none,15-30,Subang Jaya,25-34
+U028,halal,none,hypertension,25-50,Petaling Jaya,35-44
+U029,vegan,gluten,none,35-70,Kuala Lumpur,18-24
+U030,halal,peanut,diabetes,20-40,Shah Alam,25-34
+U031,none,shellfish_dairy,none,40-80,Petaling Jaya,45-54
+U032,halal,none,none,30-55,Kuala Lumpur,35-44
+U033,vegetarian,gluten_peanut,hypertension,30-60,Petaling Jaya,55-64
+U034,halal,dairy,none,15-35,Cheras,18-24
+U035,none,none,celiac_disease,25-55,Kuala Lumpur,25-34
+U036,halal,shellfish,diabetes,20-45,Petaling Jaya,45-54
+U037,vegan,none,none,35-75,Shah Alam,35-44
+U038,halal,gluten_dairy,hypertension,30-60,Kuala Lumpur,65+
+U039,none,peanut,none,30-55,Petaling Jaya,18-24
+U040,halal,none,none,25-50,Kajang,25-34
+U041,vegetarian,shellfish_gluten,celiac_disease,40-80,Kuala Lumpur,45-54
+U042,halal,dairy_peanut,diabetes,15-35,Petaling Jaya,35-44
+U043,none,none,hypertension,20-40,Shah Alam,55-64
+U044,halal,gluten,none,30-60,Kuala Lumpur,18-24
+U045,vegan,shellfish,none,25-55,Petaling Jaya,25-34
+U046,halal,none,diabetes,30-55,Subang Jaya,45-54
+U047,none,dairy_gluten_peanut,hypertension,50-100,Kuala Lumpur,65+
+U048,halal,shellfish_dairy,none,20-45,Petaling Jaya,35-44
+U049,vegetarian,none,celiac_disease,35-70,Shah Alam,18-24
+U050,halal,peanut_gluten,none,15-30,Kuala Lumpur,25-34
+U051,none,shellfish,diabetes,25-50,Petaling Jaya,45-54
+U052,halal,none,none,30-55,Cheras,35-44
+U053,vegan,dairy,none,30-60,Kuala Lumpur,55-64
+U054,halal,gluten_shellfish,hypertension,40-80,Petaling Jaya,18-24
+U055,none,peanut_dairy,celiac_disease,20-45,Shah Alam,25-34
+U056,halal,none,none,25-55,Kuala Lumpur,45-54
+U057,vegetarian,gluten,diabetes,15-35,Petaling Jaya,35-44
+U058,halal,shellfish_peanut,none,30-60,Kajang,65+
+U059,none,dairy,none,30-55,Kuala Lumpur,18-24
+U060,halal,gluten_dairy_peanut,hypertension,50-100,Petaling Jaya,25-34
+U061,vegan,none,none,20-40,Shah Alam,45-54
+U062,halal,shellfish,celiac_disease,35-70,Kuala Lumpur,35-44
+U063,none,none,diabetes,15-30,Petaling Jaya,55-64
+U064,halal,peanut,none,25-50,Subang Jaya,18-24
+U065,vegetarian,dairy_gluten,hypertension,30-60,Kuala Lumpur,25-34
+U066,halal,none,none,30-55,Petaling Jaya,45-54
+U067,none,shellfish_gluten_peanut,celiac_disease,40-80,Shah Alam,65+
+U068,halal,dairy,diabetes,20-45,Kuala Lumpur,35-44
+U069,vegan,none,hypertension,15-35,Petaling Jaya,18-24
+U070,halal,gluten,none,25-55,Cheras,25-34
+U071,none,peanut_shellfish,none,30-60,Kuala Lumpur,45-54
+U072,halal,none,celiac_disease,35-75,Petaling Jaya,55-64
+U073,vegetarian,dairy,none,30-55,Shah Alam,18-24
+U074,halal,shellfish_dairy_gluten,diabetes,50-100,Kuala Lumpur,25-34
+U075,none,none,none,20-40,Petaling Jaya,45-54
+U076,halal,peanut_gluten,hypertension,15-30,Kajang,35-44
+U077,vegan,shellfish,celiac_disease,25-50,Kuala Lumpur,65+
+U078,halal,none,none,30-55,Petaling Jaya,18-24
+U079,none,dairy_peanut,diabetes,30-60,Shah Alam,25-34
+U080,halal,gluten_shellfish,none,20-45,Kuala Lumpur,45-54
+U081,vegetarian,none,hypertension,35-70,Petaling Jaya,35-44
+U082,halal,peanut_dairy,celiac_disease,40-80,Subang Jaya,55-64
+U083,none,shellfish,none,15-35,Kuala Lumpur,18-24
+U084,halal,none,diabetes,25-55,Petaling Jaya,25-34
+U085,vegan,gluten_peanut,none,30-60,Shah Alam,45-54
+U086,halal,dairy_shellfish,hypertension,30-55,Kuala Lumpur,65+
+U087,none,none,none,20-40,Petaling Jaya,35-44
+U088,halal,gluten_peanut_shellfish,celiac_disease,50-100,Cheras,18-24
+U089,vegetarian,dairy,diabetes,15-30,Kuala Lumpur,25-34
+U090,halal,none,none,25-50,Petaling Jaya,45-54
+U091,none,peanut,none,35-75,Shah Alam,55-64
+U092,halal,shellfish_gluten,hypertension,20-45,Kuala Lumpur,18-24
+U093,vegan,none,celiac_disease,30-60,Petaling Jaya,25-34
+U094,halal,dairy_peanut,none,30-55,Kajang,45-54
+U095,none,gluten_shellfish,diabetes,40-80,Kuala Lumpur,35-44
+U096,halal,none,hypertension,25-55,Petaling Jaya,65+
+U097,vegetarian,peanut_dairy,none,15-35,Shah Alam,18-24
+U098,halal,shellfish,none,30-60,Kuala Lumpur,25-34
+U099,none,gluten,celiac_disease,20-40,Petaling Jaya,45-54
+U100,halal,dairy_gluten_peanut_shellfish,diabetes_hypertension_celiac_disease,50-100,Kuala Lumpur,55-64
