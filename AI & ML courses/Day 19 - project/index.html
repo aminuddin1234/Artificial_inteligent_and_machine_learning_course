@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design Showcase</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 60px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #ecf0f1;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card p {
+            margin-bottom: 1.5rem;
+            color: #7f8c8d;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1100;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            padding: 5rem 2rem;
+            background-color: #f1f2f6;
+        }
+        
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">DesignStudio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cards">Design Principles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Interactive UI/UX Design</h1>
+        <p>Creating beautiful, functional interfaces that enhance user experience</p>
+        <a href="#cards" class="btn">Explore Design Principles</a>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section" id="cards">
+        <div class="section-title">
+            <h2>Design Principles</h2>
+            <p>Explore our core design principles</p>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-img">Consistency</div>
+                <div class="card-content">
+                    <h3>Consistency</h3>
+                    <p>Maintaining consistent design elements throughout the interface improves usability and creates a cohesive user experience.</p>
+                    <a href="#" class="btn" id="show-modal">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">Feedback</div>
+                <div class="card-content">
+                    <h3>User Feedback</h3>
+                    <p>Providing timely feedback helps users understand the system's response to their actions, reducing confusion and errors.</p>
+                    <a href="#" class="btn" id="show-modal">Learn More</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">Simplicity</div>
+                <div class="card-content">
+                    <h3>Simplicity</h3>
+                    <p>Strive for simplicity in design. Remove unnecessary elements to focus on what truly matters for the user.</p>
+                    <a href="#" class="btn" id="show-modal">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title">Consistency</h2>
+            <p id="modal-body">Consistency is crucial for creating a seamless user experience. It helps users predict system behavior and reduces the learning curve.</p>
+            <p id="modal-footer">This principle applies to visual design, navigation, and interaction patterns throughout the interface.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our design team</p>
+        </div>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+            </div>
+            <p class="copyright">&copy; 2023 DesignStudio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const modalFooter = document.getElementById('modal-footer');
+        const closeModal = document.getElementById('close-modal');
+        const showModals = document.querySelectorAll('#show-modal');
+        
+        // Modal content based on card clicked
+        const cardContents = {
+            'Consistency': {
+                title: 'Consistency',
+                body: 'Consistency is crucial for creating a seamless user experience. It helps users predict system behavior and reduces the learning curve. When design elements, terminology, and patterns are consistent throughout an interface, users can more easily understand how to interact with the system without having to relearn different behaviors in different sections.',
+                footer: 'This principle applies to visual design, navigation, and interaction patterns throughout the interface.'
+            },
+            'Feedback': {
+                title: 'User Feedback',
+                body: 'Providing timely feedback helps users understand the system\'s response to their actions, reducing confusion and errors. Effective feedback should be clear, concise, and communicated through appropriate channels. When users perform an action, they should receive immediate confirmation or explanation of what happened.',
+                footer: 'Feedback can be visual, auditory, or haptic, depending on the context and nature of the interaction.'
+            },
+            'Simplicity': {
+                title: 'Simplicity',
+                body: 'Simplicity in design means removing unnecessary elements to focus on what truly matters for the user. It involves prioritizing content and functionality, eliminating clutter, and ensuring that interfaces are intuitive and easy to understand. A simple design doesn\'t necessarily mean minimalist; it means purposeful and uncluttered.',
+                footer: 'Simplicity helps reduce cognitive load, improves usability, and creates a more enjoyable user experience.'
+            }
+        };
+        
+        // Show modal based on card clicked
+        showModals.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const cardTitle = this.parentElement.querySelector('h3').textContent;
+                const content = cardContents[cardTitle];
+                
+                if (content) {
+                    modalTitle.textContent = content.title;
+                    modalBody.textContent = content.body;
+                    modalFooter.textContent = content.footer;
+                    modal.style.display = 'flex';
+                }
+            });
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal if clicked outside the modal content
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Form validation
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Here you would typically send the form data to a server
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

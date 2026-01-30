@@ -1,0 +1,101 @@
+﻿menu_id,restaurant_id,dish_name,ingredients_clean,allergens,price_myr,safety_status
+M001,R001,Grilled Chicken Breast,grilled chicken breast olive oil rosemary garlic,none,25,VERIFIED
+M002,R001,Seafood Pasta,pasta shrimp mussels garlic cream,shellfish dairy gluten,32,VERIFIED
+M003,R001,Quinoa Bowl,quinoa roasted vegetables lemon tahini dressing,none,28,VERIFIED
+M004,R001,Gluten Free Wrap,rice wrap lettuce tomato cucumber avocado,none,22,VERIFIED
+M005,R001,Mystery Soup,vegetables broth,,15,POTENTIAL_RISK
+M006,R002,Vegan Burger,black beans lettuce tomato whole wheat bun,gluten,18,VERIFIED
+M007,R002,Quinoa Salad,quinoa cucumber cherry tomatoes lemon dressing,none,22,VERIFIED
+M008,R002,Gluten Free Pasta,rice pasta roasted vegetables olive oil garlic,none,28,VERIFIED
+M009,R002,Cross Contaminated Fries,potatoes cooked in shared fryer with seafood,shellfish,12,VERIFIED
+M010,R002,Coconut Curry,coconut milk vegetables curry spices,none,24,VERIFIED
+M011,R003,Butter Crab,crab butter garlic chili,shellfish dairy,45,VERIFIED
+M012,R003,Grilled Fish,sea bass lemon herbs olive oil,shellfish,38,VERIFIED
+M013,R003,Seafood Platter,mixed shellfish lemon butter sauce,shellfish dairy gluten,65,VERIFIED
+M014,R003,Steamed Vegetables,seasonal vegetables steamed,none,28,VERIFIED
+M015,R003,Shared Kitchen Risotto,arborio rice seafood stock parmesan,shellfish dairy gluten,42,VERIFIED
+M016,R004,Nasi Lemak,rice coconut milk sambal anchovies cucumber egg,shellfish egg,12,VERIFIED
+M017,R004,Ayam Goreng,fried chicken turmeric spices,none,15,VERIFIED
+M018,R004,Rendang Beef,beef coconut milk spices lemongrass,none,18,VERIFIED
+M019,R004,Kangkung Belacan,water spinach shrimp paste chili,shellfish,10,VERIFIED
+M020,R004,Sambal Egg,boiled egg sambal chili paste,none,8,VERIFIED
+M021,R005,Margherita Pizza,flour tomato mozzarella basil,gluten dairy,35,VERIFIED
+M022,R005,Pasta Carbonara,spaghetti eggs pancetta parmesan black pepper,gluten dairy egg,38,VERIFIED
+M023,R005,Seafood Linguine,linguine clams mussels white wine,shellfish gluten,42,VERIFIED
+M024,R005,Caprese Salad,tomato mozzarella basil olive oil,none,28,VERIFIED
+M025,R005,Tiramisu,ladyfingers coffee mascarpone cocoa,dairy gluten egg,32,VERIFIED
+M026,R006,Nasi Lemak Special,rice coconut milk sambal fried chicken anchovies cucumber egg,shellfish egg,14,VERIFIED
+M027,R006,Rendang Ayam,chicken coconut milk spices,none,16,VERIFIED
+M028,R006,Sambal Sotong,squid sambal chili paste,shellfish,18,VERIFIED
+M029,R006,Ulam Salad,herbs cucumber long beans lime dressing,none,10,VERIFIED
+M030,R006,Keropok Lekor,fish crackers chili dipping sauce,shellfish,8,VERIFIED
+M031,R007,Salmon Sushi,salmon rice nori wasabi ginger,none,35,VERIFIED
+M032,R007,Tuna Roll,tuna rice nori sesame seeds,none,32,VERIFIED
+M033,R007,Tempura Udon,udon noodles shrimp tempura broth,shellfish gluten,28,VERIFIED
+M034,R007,Miso Soup,tofu seaweed miso broth,none,12,VERIFIED
+M035,R007,Shared Fryer Gyoza,pork dumplings fried in shared oil,shellfish gluten,22,VERIFIED
+M036,R008,Vegan Burger,black bean patty lettuce tomato avocado bun,gluten,20,VERIFIED
+M037,R008,Buddha Bowl,quinoa roasted vegetables tahini dressing avocado,none,26,VERIFIED
+M038,R008,Chickpea Curry,chickpeas coconut milk curry spices rice,none,24,VERIFIED
+M039,R008,Gluten Free Brownie,almond flour cocoa coconut sugar,none,15,VERIFIED
+M040,R008,Cross Contamination Warning Salad,mixed greens croutons (may contain traces of shellfish),gluten shellfish,18,VERIFIED
+M041,R009,Butter Chicken,chicken tomato cream spices naan bread,gluten dairy,28,VERIFIED
+M042,R009,Vegetable Biryani,basmati rice mixed vegetables spices yogurt,none,22,VERIFIED
+M043,R009,Naan Bread,flour yogurt yeast,gluten dairy,8,VERIFIED
+M044,R009,Samosa,potato peas pastry spices,gluten,10,VERIFIED
+M045,R009,Rasmalai,cottage cheese milk saffron cardamom,dairy,14,VERIFIED
+M046,R010,Cheeseburger,beef patty cheese lettuce tomato bun,gluten dairy,25,VERIFIED
+M047,R010,Fish and Chips,cod beer batter fries tartar sauce,gluten dairy shellfish,28,VERIFIED
+M048,R010,Veggie Burger,plant patty lettuce tomato bun,gluten,22,VERIFIED
+M049,R010,Fries,potatoes salt,none,12,VERIFIED
+M050,R010,Milkshake,vanilla ice cream milk whipped cream,dairy,18,VERIFIED
+M051,R011,Char Kway Teow,rice noodles prawns cockles bean sprouts soy sauce,shellfish gluten,18,VERIFIED
+M052,R011,Hainanese Chicken Rice,poached chicken rice ginger sauce,none,16,VERIFIED
+M053,R011,Pork Dumplings,pork cabbage wrappers soy dipping sauce,gluten,14,VERIFIED
+M054,R011,Mapo Tofu,tofu minced pork chili bean sauce rice,gluten,20,VERIFIED
+M055,R011,Shared Wok Fried Rice,rice eggs vegetables soy sauce (cooked with seafood),shellfish egg gluten,15,VERIFIED
+M056,R012,Teh Tarik,black tea condensed milk,dairy,6,VERIFIED
+M057,R012,Nasi Lemak,rice coconut milk sambal anchovies cucumber egg,shellfish egg,10,VERIFIED
+M058,R012,Roti Canai,flour ghee curry dipping sauce,gluten dairy,5,VERIFIED
+M059,R012,Maggi Goreng,noodles egg vegetables soy sauce,gluten egg,8,VERIFIED
+M060,R012,Cendol,shaved ice coconut milk palm sugar green jelly,none,7,VERIFIED
+M061,R013,Pepperoni Pizza,wheat dough tomato sauce mozzarella pepperoni,gluten dairy,32,VERIFIED
+M062,R013,Veggie Supreme Pizza,wheat dough tomato sauce mixed vegetables,gluten dairy,30,VERIFIED
+M063,R013,Chicken Wings,crispy chicken wings buffalo sauce,none,28,VERIFIED
+M064,R013,Caesar Salad,romaine lettuce croutons parmesan dressing,gluten dairy,24,VERIFIED
+M065,R013,Buffalo Wings Shared Fryer,chicken wings fried in oil used for seafood,shellfish,26,VERIFIED
+M066,R014,Rendang Tok,beef coconut milk galangal lemongrass kaffir lime leaves,none,45,VERIFIED
+M067,R014,Nasi Ulam,rice herbs cucumber dried shrimp,shellfish,38,VERIFIED
+M068,R014,Gulai Kawah,lamb coconut curry spices,none,42,VERIFIED
+M069,R014,Sambal Stingray,ray fish sambal chili paste wrapped in banana leaf,shellfish,50,VERIFIED
+M070,R014,Kerabu Mangga,green mango salad chili lime shrimp paste,shellfish,28,VERIFIED
+M071,R015,Har Cheong Gai,pork ribs shrimp paste batter fried,shellfish gluten,28,VERIFIED
+M072,R015,Steamed Fish,sea bass ginger soy sauce spring onions,shellfish gluten,35,VERIFIED
+M073,R015,Chicken Feet,steamed chicken feet black bean sauce,none,22,VERIFIED
+M074,R015,Vegetable Dumplings,vegetables wheat wrappers steamed,gluten,18,VERIFIED
+M075,R015,Shared Steamer Prawn Dumplings,shrimp pork wheat wrappers steamed in shared basket,shellfish gluten,24,VERIFIED
+M076,R016,Chicken Curry,chicken potatoes curry spices rice,none,18,VERIFIED
+M077,R016,Mutton Curry,mutton potatoes curry spices naan,gluten,22,VERIFIED
+M078,R016,Vegetable Curry,mixed vegetables curry spices rice,none,15,VERIFIED
+M079,R016,Naan,flour yogurt yeast baked in tandoor,gluten dairy,6,VERIFIED
+M080,R016,Papadum,lentil crackers fried,none,4,VERIFIED
+M081,R017,Ribeye Steak,beef garlic herb butter,none,85,VERIFIED
+M082,R017,Grilled Salmon,salmon lemon dill butter sauce,shellfish dairy,68,VERIFIED
+M083,R017,Truffle Fries,potatoes truffle oil parmesan,dairy,22,VERIFIED
+M084,R017,Caesar Salad,romaine croutons parmesan anchovy dressing,gluten dairy shellfish,26,VERIFIED
+M085,R017,Shared Grill Surf and Turf,beef shrimp garlic butter (cooked on same surface),shellfish dairy,95,VERIFIED
+M086,R018,Chicken Satay,chicken skewers peanut sauce cucumber onion,peanut,15,VERIFIED
+M087,R018,Beef Satay,beef skewers peanut sauce cucumber onion,peanut,16,VERIFIED
+M088,R018,Ketupat,rice cakes compressed in woven palm leaves,none,5,VERIFIED
+M089,R018,Nasi Impit,compressed rice cubes peanut sauce,peanut,8,VERIFIED
+M090,R018,Sambal Belacan,chili shrimp paste lime,shellfish,3,VERIFIED
+M091,R019,Tonkotsu Ramen,pork broth wheat noodles chashu egg nori,gluten egg,32,VERIFIED
+M092,R019,Miso Ramen,soybean paste broth wheat noodles tofu seaweed,gluten,28,VERIFIED
+M093,R019,Tempura Set,shrimp vegetable tempura rice miso soup,shellfish gluten,35,VERIFIED
+M094,R019,Gyoza,pork cabbage dumplings pan-fried,gluten,18,VERIFIED
+M095,R019,Cross Contamination Warning Ramen,wheat noodles pork broth (prepared near seafood station),shellfish gluten,30,VERIFIED
+M096,R020,Superfood Salad,kale quinoa avocado chickpeas lemon dressing,none,24,VERIFIED
+M097,R020,Grilled Chicken Salad,chicken mixed greens vinaigrette,none,26,VERIFIED
+M098,R020,Vegan Power Bowl,quinoa roasted vegetables tahini dressing,none,28,VERIFIED
+M099,R020,Gluten Free Wrap,rice wrap hummus vegetables,none,22,VERIFIED
+M100,R020,Shared Cutting Board Salad,mixed greens croutons nuts (prepared on surface used for shellfish),shellfish gluten peanut,20,VERIFIED
