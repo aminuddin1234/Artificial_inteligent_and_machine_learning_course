@@ -1,0 +1,5 @@
+venv/
+venv312/
+*.dll
+*.exe
+.ipynb_checkpoints/
