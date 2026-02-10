@@ -39,9 +39,44 @@
       console.log(!true); // false  
       console.log(!false); // true
 
+      /*
       if(0) {           // (0) Falsy  // (1) Truthy
         console.log('Truthy');
       }
+
+      const cartquantity = 5;
+
+      if (cartquantity) {
+        console.log("cart has items");      
+      }
+
+      console.log(!0);
+
+      console.log('text' / 5);
+      console.log('text' * 5);
+
+      let variables1;
+      console.log(variables1);
+      */
+
+    const result = true ? 'truthy' : 'falsy';    // ternary operator 
+    console.log(result);
+
+    const result2 = 0 ? 'truthy' : 'falsy';    // ternary operator 
+    console.log(result2);
+
+    false && console.log('hello'); //guard operator &&
+
+    const message = false && 'hello'; //shortcut to if statement
+    console.log(message);
+
+    const currency = 'USD' || 'myr';
+    console.log(currency);
+
+    const currency2 = undefined || 'MYR'; //default operator ||
+    console.log(currency2);
+    
+
     </script>
   </body>
 </html>
