@@ -7,65 +7,44 @@
   </head>
   <body>
     <p>Rock Paper Scissors</p>
-    <button
-      onclick="
-        const computerChoice = pickcomputerchoice();
-
-        let result = '';
-        if (computerChoice === 'rock') {
-          result = 'Tie';
-        } else if (computerChoice === 'paper') {
-          result = 'You lose';
-        } else if (computerChoice === 'scissors') {
-          result = 'You win';
-        }
-        alert(
-          `Computer picked ${computerChoice}. ${result} because you picked rock.`,
-        );
-      "
-    >
-      Rock
-    </button>
-    <button
-      onclick="
-        const computerChoice = pickcomputerchoice();
-
-        let result = '';
-        if (computerChoice === 'rock') {
-          result = 'you win';
-        } else if (computerChoice === 'paper') {
-          result = 'Tie';
-        } else if (computerChoice === 'scissors') {
-          result = 'You lose';
-        }
-        alert(
-          `Computer picked ${computerChoice}. ${result} because you picked Paper.`,
-        );
-      "
-    >
-      Paper
-    </button>
-    <button
-      onclick="
-        const computerChoice = pickcomputerchoice();
-
-        let result = '';
-        if (computerChoice === 'rock') {
-          result = 'You lose';
-        } else if (computerChoice === 'paper') {
-          result = 'You Win';
-        } else if (computerChoice === 'scissors') {
-          result = 'Tie';
-        }
-        alert(
-          `Computer picked ${computerChoice}. ${result} because you picked Scissors.`,
-        );
-      "
-    >
-      Scissors
-    </button>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
     <script>
-      function play
+      function playGame(playerChoice) {
+        const computerChoice = pickcomputerchoice();
+        let result = "";
+
+        if (playerChoice === "scissors") {
+          if (computerChoice === "rock") {
+            result = "You lose";
+          } else if (computerChoice === "paper") {
+            result = "You win";
+          } else if (computerChoice === "scissors") {
+            result = "tie";
+          }
+        } else if (playerChoice === "paper") {
+          if (computerChoice === "rock") {
+            result = "you win";
+          } else if (computerChoice === "paper") {
+            result = "Tie";
+          } else if (computerChoice === "scissors") {
+            result = "You lose";
+          }
+        } else if (playerChoice === "rock") {
+          if (computerChoice === "rock") {
+            result = "Tie";
+          } else if (computerChoice === "paper") {
+            result = "You lose";
+          } else if (computerChoice === "scissors") {
+            result = "You win";
+          }
+        }
+
+        alert(
+          `Computer picked ${computerChoice}. ${result} because you picked ${playerChoice}.`,
+        );
+      }
 
       let computerChoice = "";
       // function easier way remove duplicate
