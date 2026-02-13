@@ -23,6 +23,33 @@
 
       delete product.newproperty;
       console.log(product);
+
+      const product2 = {
+        name: "shirt",
+        'delivery-time': '1 day',
+        actualprice: 1000,
+        discountedprice: 250,
+        rating: {
+          stars: 4,
+          reviews: 100,
+        }
+      };
+      console.log(product2);
+      console.log(product2.name); //dot notation
+      console.log(product2['name']); //bracket notation
+      console.log(product2['delivery-time']); //bracket notation
+      console.log(product2.actualprice);
+      console.log(product2.discountedprice);
+      console.log(product2.rating.stars);
+      console.log(product2.rating.reviews);
+      console.log(product2.rating['reviews']);
+      console.log(product2['actualprice'] - product2['discountedprice']);
+
+      //json object
+      console.log(JSON.stringify(product2)); //json.stringify(product2);
+      const jsonstring = JSON.stringify(product2);
+      console.log(JSON.parse(jsonstring));
+      JSON
     </script>
   </body>
 </html>
