@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "Laptop",
+        price: 3000,
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = "Mobile";
+      console.log(product);
+
+      product.newproperty = true;
+      console.log(product);
+
+      delete product.newproperty;
+      console.log(product);
+    </script>
+  </body>
+</html>
