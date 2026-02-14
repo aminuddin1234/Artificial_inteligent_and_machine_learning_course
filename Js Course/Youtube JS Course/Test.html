@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      /* Animated floating shapes in background */
+      body::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%);
+        top: -100px;
+        left: -100px;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      body::after {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+        animation: float 10s ease-in-out infinite reverse;
+      }
+
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(30px, 30px) rotate(180deg); }
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+        to { text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(78, 205, 196, 0.5); }
+      }
+
+      .subtitle {
+        color: #aaa;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+      }
+
+      .game-area {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .choice-btn {
+        width: 130px;
+        height: 130px;
+        border: none;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .choice-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+      }
+
+      .choice-btn:hover::before {
+        left: 100%;
+      }
+
+      .choice-btn span {
+        font-size: 3rem;
+        transition: transform 0.3s;
+      }
+
+      .choice-btn:hover span {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      .choice-btn:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .choice-btn:active {
+        transform: scale(0.95) translateY(0);
+        transition: all 0.1s;
+      }
+
+      .rock {
+        background: linear-gradient(145deg, #ff6b6b, #ee5a5a);
+        color: white;
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+      }
+
+      .paper {
+        background: linear-gradient(145deg, #4ecdc4, #3dbdb5);
+        color: white;
+        box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+      }
+
+      .scissors {
+        background: linear-gradient(145deg, #ffe66d, #f7d154);
+        color: #333;
+        box-shadow: 0 8px 20px rgba(255, 230, 109, 0.4);
+      }
+
+      /* Result animation */
+      .result-display {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 25px 50px;
+        margin-bottom: 30px;
+        text-align: center;
+        min-width: 350px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.5s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .result-display h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        transition: all 0.3s;
+      }
+
+      .result-display .moves {
+        color: #ccc;
+        font-size: 1.1rem;
+      }
+
+      .scoreboard {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .score-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 20px 30px;
+        text-align: center;
+        min-width: 120px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s;
+      }
+
+      .score-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      /* Score card pulse animation on change */
+      .score-card.pulse {
+        animation: pulse 0.5s ease;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+
+      .score-card .label {
+        font-size: 0.9rem;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+      }
+
+      .score-card .value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .score-card.wins .value {
+        color: #4ecdc4;
+        text-shadow: 0 0 20px rgba(78, 205, 196, 0.5);
+      }
+      .score-card.losses .value {
+        color: #ff6b6b;
+        text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+      }
+      .score-card.ties .value {
+        color: #ffe66d;
+        text-shadow: 0 0 20px rgba(255, 230, 109, 0.5);
+      }
+
+      .reset-btn {
+        background: transparent;
+        border: 2px solid #ff6b6b;
+        color: #ff6b6b;
+        padding: 14px 35px;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+      }
+
+      .reset-btn:hover {
+        background: #ff6b6b;
+        color: white;
+        box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+        transform: scale(1.05);
+      }
+
+      .win {
+        color: #4ecdc4 !important;
+        animation: pop 0.5s ease;
+      }
+      .lose {
+        color: #ff6b6b !important;
+        animation: pop 0.5s ease;
+      }
+      .tie {
+        color: #ffe66d !important;
+        animation: pop 0.5s ease;
+      }
+
+      @keyframes pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); opacity: 1; }
+      }
+
+      /* Winner celebration effect */
+      .celebration {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        animation: confetti-fall 3s ease-out forwards;
+      }
+
+      @keyframes confetti-fall {
+        0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="celebration" id="celebration"></div>
+    <h1>🪨 📄 ✂️</h1>
+    <p class="subtitle">Rock Paper Scissors</p>
+
+    <div class="game-area">
+      <button class="choice-btn rock" onclick="playGame('rock')">
+        <span>🪨</span>
+        Rock
+      </button>
+      <button class="choice-btn paper" onclick="playGame('paper')">
+        <span>📄</span>
+        Paper
+      </button>
+      <button class="choice-btn scissors" onclick="playGame('scissors')">
+        <span>✂️</span>
+        Scissors
+      </button>
+    </div>
+
+    <div class="result-display">
+      <h2 id="result-text">Choose your move!</h2>
+      <p class="moves" id="moves-display"></p>
+    </div>
+
+    <div class="scoreboard">
+      <div class="score-card wins">
+        <div class="label">Wins</div>
+        <div class="value" id="wins">0</div>
+      </div>
+      <div class="score-card losses">
+        <div class="label">Losses</div>
+        <div class="value" id="losses">0</div>
+      </div>
+      <div class="score-card ties">
+        <div class="label">Ties</div>
+        <div class="value" id="ties">0</div>
+      </div>
+    </div>
+
+    <button class="reset-btn" onclick="resetScore()">Reset Score</button>
+
+    <script>
+      // ============ CONFIGURATION ============
+      const CHOICES = ["rock", "paper", "scissors"];
+      const EMOJIS = { rock: "🪨", paper: "📄", scissors: "✂️" };
+
+      // ============ STATE ============
+      let score = loadScore();
+
+      // ============ INITIALIZATION ============
+      updateScoreDisplay();
+
+      // ============ CORE FUNCTIONS ============
+      function playGame(playerChoice) {
+        // Validate input
+        if (!CHOICES.includes(playerChoice)) {
+          console.error("Invalid choice:", playerChoice);
+          return;
+        }
+
+        const computerChoice = getComputerChoice();
+        const result = determineWinner(playerChoice, computerChoice);
+
+        // Update score
+        updateScore(result);
+
+        // Update UI
+        displayResult(playerChoice, computerChoice, result);
+      }
+
+      function getComputerChoice() {
+        const randomIndex = Math.floor(Math.random() * CHOICES.length);
+        return CHOICES[randomIndex];
+      }
+
+      function determineWinner(player, computer) {
+        if (player === computer) {
+          return "tie";
+        }
+
+        const wins = {
+          rock: "scissors",
+          paper: "rock",
+          scissors: "paper",
+        };
+
+        return wins[player] === computer ? "win" : "lose";
+      }
+
+      function updateScore(result) {
+        const scoreType = result === "win" ? "wins" : result === "lose" ? "losses" : "ties";
+        score[scoreType]++;
+        saveScore();
+        updateScoreDisplay();
+        
+        // Add pulse animation to the updated score card
+        pulseScoreCard(scoreType);
+        
+        // Show confetti on win
+        if (result === "win") {
+          createConfetti();
+        }
+      }
+
+      // ============ UI FUNCTIONS ============
+      function displayResult(playerChoice, computerChoice, result) {
+        const resultText = document.getElementById("result-text");
+        const movesDisplay = document.getElementById("moves-display");
+
+        const resultMessages = {
+          win: "You Win! 🎉",
+          lose: "You Lose! 😢",
+          tie: "It's a Tie! 🤝",
+        };
+
+        resultText.textContent = resultMessages[result];
+        resultText.className = result;
+
+        movesDisplay.innerHTML =
+          `You picked ${EMOJIS[playerChoice]} ${playerChoice} &nbsp;|&nbsp; ` +
+          `Computer picked ${EMOJIS[computerChoice]} ${computerChoice}`;
+      }
+
+      function updateScoreDisplay() {
+        document.getElementById("wins").textContent = score.wins;
+        document.getElementById("losses").textContent = score.losses;
+        document.getElementById("ties").textContent = score.ties;
+      }
+
+      // Add pulse animation to score card
+      function pulseScoreCard(type) {
+        const card = document.querySelector(`.score-card.${type}`);
+        if (card) {
+          card.classList.add('pulse');
+          setTimeout(() => card.classList.remove('pulse'), 500);
+        }
+      }
+
+      // Confetti effect for wins
+      function createConfetti() {
+        const celebration = document.getElementById('celebration');
+        celebration.innerHTML = ''; // Clear previous confetti
+
+        const colors = ['#4ecdc4', '#ff6b6b', '#ffe66d', '#a8e6cf', '#fdffab'];
+
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.animationDelay = Math.random() * 2 + 's';
+          confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+          celebration.appendChild(confetti);
+        }
+
+        setTimeout(() => celebration.innerHTML = '', 4000);
+      }
+
+      function resetScore() {
+        score = { wins: 0, losses: 0, ties: 0 };
+        saveScore();
+        updateScoreDisplay();
+
+        // Reset display
+        document.getElementById("result-text").textContent = "Score Reset!";
+        document.getElementById("result-text").className = "";
+        document.getElementById("moves-display").textContent =
+          "Choose your move!";
+      }
+
+      // ============ STORAGE ============
+      function loadScore() {
+        const stored = localStorage.getItem("rps-score");
+        if (stored) {
+          try {
+            return JSON.parse(stored);
+          } catch (e) {
+            console.warn("Failed to parse stored score");
+          }
+        }
+        return { wins: 0, losses: 0, ties: 0 };
+      }
+
+      function saveScore() {
+        localStorage.setItem("rps-score", JSON.stringify(score));
+      }
+    </script>
+  </body>
+</html>
