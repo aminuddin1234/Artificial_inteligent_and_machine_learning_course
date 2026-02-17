@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penalty Football Game</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a5f2a, #0d3d16);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 { font-size: 2rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+    /* Scoreboard */
+    .scoreboard {
+      display: flex;
+      gap: 30px;
+      background: rgba(0,0,0,0.5);
+      padding: 15px 40px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .score-item { text-align: center; }
+    .score-label { font-size: 0.8rem; color: #aaa; text-transform: uppercase; }
+    .score-value { font-size: 2rem; font-weight: bold; }
+    .goals .score-value { color: #4ecdc4; }
+    .saves .score-value { color: #ff6b6b; }
+
+    /* Game Area */
+    .game-area {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      background: linear-gradient(to bottom, #2d8a3e 0%, #2d8a3e 60%, #3a9d4d 60%);
+      border: 4px solid white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Goal */
+    .goal {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 100px;
+      border: 4px solid white;
+      border-bottom: none;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Goal Zones */
+    .goal-zones {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .zone {
+      border: 1px dashed rgba(255,255,255,0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      transition: all 0.2s;
+    }
+        .zone:hover { background: rgba(78,205,196,0.4); }
+    .zone.selected { background: rgba(78,205,196,0.6); border: 2px solid #4ecdc4; }
+    .zone.goal-highlight { 
+      background: rgba(78,205,196,0.8) !important; 
+      animation: goalPulse 0.3s ease 2;
+    }
+    .zone.save-highlight { 
+      background: rgba(255,107,107,0.7) !important; 
+    }
+    @keyframes goalPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Goalkeeper */
+    .goalkeeper {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 60px;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    .gk-body {
+      width: 30px;
+      height: 40px;
+      background: #ff6b6b;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+    .gk-head {
+      width: 20px;
+      height: 20px;
+      background: #ffd3b6;
+      border-radius: 50%;
+      margin: 0 auto 2px;
+    }
+        /* Goalkeeper dive positions */
+    .goalkeeper.dive-tl { transform: translateX(-85px) translateY(-30px) rotate(-25deg); }
+    .goalkeeper.dive-tc { transform: translateX(-50%) translateY(-45px); }
+    .goalkeeper.dive-tr { transform: translateX(35px) translateY(-30px) rotate(25deg); }
+    .goalkeeper.dive-bl { transform: translateX(-80px) translateY(5px) rotate(-15deg); }
+    .goalkeeper.dive-bc { transform: translateX(-50%) translateY(5px); }
+    .goalkeeper.dive-br { transform: translateX(30px) translateY(5px) rotate(15deg); }
+
+        /* Ball */
+    .ball {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 25px;
+      background: radial-gradient(circle at 30% 30%, white, #ccc);
+      border-radius: 50%;
+      z-index: 5;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+        /* Ball positions - aligned with goal zones */
+    /* Goal zones: top 20px-120px, centered at 100-300px (left edge at 100px, right edge at 300px) */
+    /* Game area height: 300px, so goal top at 20px = 280px from bottom, goal bottom at 120px = 180px from bottom */
+    
+    /* Top row zones (y: 20px-70px from top = 230px-180px from bottom) */
+    .ball.shot-tl { 
+      bottom: 200px; 
+      left: 133px; 
+      transform: translateX(-50%) scale(0.45);
+    }
+    .ball.shot-tc { 
+      bottom: 210px; 
+      left: 200px; 
+      transform: translateX(-50%) scale(0.45);
+    }
+    .ball.shot-tr { 
+      bottom: 200px; 
+      left: 267px; 
+      transform: translateX(-50%) scale(0.45);
+    }
+    /* Bottom row zones (y: 70px-120px from top = 230px-180px from bottom) */
+    .ball.shot-bl { 
+      bottom: 160px; 
+      left: 133px; 
+      transform: translateX(-50%) scale(0.55);
+    }
+    .ball.shot-bc { 
+      bottom: 160px; 
+      left: 200px; 
+      transform: translateX(-50%) scale(0.55);
+    }
+    .ball.shot-br { 
+      bottom: 160px; 
+      left: 267px; 
+      transform: translateX(-50%) scale(0.55);
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:disabled { background: #666; cursor: not-allowed; }
+    .btn-kick { background: #4ecdc4; color: #333; }
+    .btn-reset { background: transparent; border: 2px solid #ff6b6b; color: #ff6b6b; }
+
+    /* Result */
+    .result {
+      font-size: 1.5rem;
+      min-height: 40px;
+      text-align: center;
+    }
+    .result.goal { color: #4ecdc4; }
+    .result.save { color: #ff6b6b; }
+
+    /* Info */
+    .info { color: #aaa; font-size: 0.9rem; text-align: center; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>⚽ Penalty Football Game</h1>
+  
+  <div class="scoreboard">
+    <div class="score-item goals">
+      <div class="score-label">Goals</div>
+      <div class="score-value" id="goals">0</div>
+    </div>
+    <div class="score-item saves">
+      <div class="score-label">Saves</div>
+      <div class="score-value" id="saves">0</div>
+    </div>
+  </div>
+
+  <div class="game-area">
+    <div class="goal"></div>
+        <div class="goal-zones" id="goalZones">
+      <div class="zone" data-zone="tl">TL</div>
+      <div class="zone" data-zone="tc">TOP</div>
+      <div class="zone" data-zone="tr">TR</div>
+      <div class="zone" data-zone="bl">BL</div>
+      <div class="zone" data-zone="bc">BTM</div>
+      <div class="zone" data-zone="br">BR</div>
+    </div>
+    <div class="goalkeeper" id="goalkeeper">
+      <div class="gk-head"></div>
+      <div class="gk-body"></div>
+    </div>
+    <div class="ball" id="ball"></div>
+  </div>
+
+  <p class="info">👆 Click a zone in the goal to aim, then press KICK!</p>
+  
+  <div class="controls">
+    <button class="btn btn-kick" id="kickBtn" onclick="kick()" disabled>KICK ⚽</button>
+    <button class="btn btn-reset" onclick="resetGame()">Reset</button>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    // State
+    let score = { goals: 0, saves: 0 };
+    let selectedZone = null;
+    let isPlaying = false;
+
+    // Elements
+    const zones = document.querySelectorAll('.zone');
+    const kickBtn = document.getElementById('kickBtn');
+    const ball = document.getElementById('ball');
+    const goalkeeper = document.getElementById('goalkeeper');
+    const result = document.getElementById('result');
+
+    // Zone selection
+    zones.forEach(zone => {
+      zone.addEventListener('click', () => {
+        if (isPlaying) return;
+        zones.forEach(z => z.classList.remove('selected'));
+        zone.classList.add('selected');
+        selectedZone = zone.dataset.zone;
+        kickBtn.disabled = false;
+        result.textContent = `Aiming: ${selectedZone.toUpperCase()}`;
+        result.className = 'result';
+      });
+    });
+
+        // Kick function
+    function kick() {
+      if (!selectedZone || isPlaying) return;
+      isPlaying = true;
+      kickBtn.disabled = true;
+      result.textContent = '';
+
+      // Animate ball to selected zone
+      ball.className = 'ball shot-' + selectedZone;
+
+      // Goalkeeper dives randomly to one of 6 zones
+      const dives = ['tl', 'tc', 'tr', 'bl', 'bc', 'br'];
+      const gkDive = dives[Math.floor(Math.random() * dives.length)];
+      goalkeeper.className = 'goalkeeper dive-' + gkDive;
+
+                                    // Check result - goalkeeper saves if dives to exact zone
+      // Wait for ball animation to complete (400ms transition)
+      setTimeout(() => {
+        // Find the selected zone element
+        const selectedZoneEl = document.querySelector(`.zone[data-zone="${selectedZone}"]`);
+        const gkZoneEl = document.querySelector(`.zone[data-zone="${gkDive}"]`);
+        
+        if (selectedZone === gkDive) {
+          // Goalkeeper guessed correctly - SAVE!
+          score.saves++;
+          if (gkZoneEl) gkZoneEl.classList.add('save-highlight');
+        } else {
+          // Goalkeeper guessed wrong - GOAL!
+          score.goals++;
+          if (selectedZoneEl) selectedZoneEl.classList.add('goal-highlight');
+        }
+        updateScore();
+        
+        // Reset for next turn - don't show result text
+        setTimeout(() => {
+          ball.className = 'ball';
+          goalkeeper.className = 'goalkeeper';
+          zones.forEach(z => {
+            z.classList.remove('selected', 'goal-highlight', 'save-highlight');
+          });
+          selectedZone = null;
+          isPlaying = false;
+          result.textContent = 'Click a zone to play again!';
+          kickBtn.disabled = true;
+        }, 1500);
+      }, 500);
+    }
+
+    // Update score display
+    function updateScore() {
+      document.getElementById('goals').textContent = score.goals;
+      document.getElementById('saves').textContent = score.saves;
+    }
+
+    // Reset game
+    function resetGame() {
+      score = { goals: 0, saves: 0 };
+      updateScore();
+      ball.className = 'ball';
+      goalkeeper.className = 'goalkeeper';
+      zones.forEach(z => z.classList.remove('selected'));
+      selectedZone = null;
+      isPlaying = false;
+      kickBtn.disabled = true;
+      result.textContent = 'Game Reset! Click a zone to aim.';
+      result.className = 'result';
+    }
+  </script>
+</body>
+</html>
