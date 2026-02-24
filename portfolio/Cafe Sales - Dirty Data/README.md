@@ -30,10 +30,14 @@
 
 
 * Visualization
-    - Visualized "Item Sales Volume by Purchase Channel" to compare performance across In-store, Takeaway, and Online platforms, providing a clear picture of customer behavior and revenue streams.
+    - **1. Price vs Quantity Scatter (Bubble Chart):** Visualizes the relationship between unit price, quantity ordered, and total spent, with bubble size representing revenue.
+    - **2. Revenue Distribution by Item (Pie Chart):** Shows the percentage contribution of each item to total revenue, helping identify top revenue generators.
 
-![alt text](image.png)
+   - **3. Transaction Count by Payment Method (Bar Chart):** Displays the popularity of different payment methods (Credit Card, Cash, Digital Wallet) among customers.
 
+   - **4. Monthly Revenue Trend (Line Chart):** Tracks revenue performance over time, revealing seasonal patterns and growth trends throughout the year.
+
+    - **5. Revenue Heatmap - Location vs Payment Method (Heatmap):** Cross-analysis visualization showing which payment methods perform best at each location (In-store, Takeaway, Online).
 
 
 * Datasets ~
