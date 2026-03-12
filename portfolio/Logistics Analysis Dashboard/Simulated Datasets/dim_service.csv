@@ -1,0 +1,7 @@
+ServiceID,ServiceName,Category,BaseRate_RM
+SV01,Contract Warehousing,Warehousing,15000
+SV02,Freight Forwarding,Freight,8000
+SV03,Customs Brokerage,Customs,5000
+SV04,Distribution,Distribution,6000
+SV05,Value-Added Services,VAS,3500
+SV06,Transportation Management,Transport,7500

@@ -1,0 +1,6 @@
+WarehouseID,WarehouseName,Location,State,Capacity_Pallets,Type
+WH001,The Ship - Port Klang,Port Klang,Selangor,5000,Port Logistics
+WH002,The Lighthouse - Subang,Subang,Selangor,3500,Distribution
+WH003,One Auto Hub - Shah Alam,Shah Alam,Selangor,4000,Automotive
+WH004,PKT Selangor Hub,Petaling Jaya,Selangor,2800,General
+WH005,PKT Johor Bahru,Johor Bahru,Johor,3200,Distribution
