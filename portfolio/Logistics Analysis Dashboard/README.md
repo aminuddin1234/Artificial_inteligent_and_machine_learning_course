@@ -7,16 +7,16 @@
 ## 🖼️ Dashboard Preview
 
 ### Page 1 — Executive Summary
-![Executive Summary](portfolio\Logistics Analysis Dashboard\Dashboards\PKT_vis1.png)
+![Executive Summary](Dashboards/PKT_vis1.png)
 
 ### Page 2 — Delivery Performance
-![Delivery Performance](portfolio\Logistics Analysis Dashboard\Dashboards\PKT_vis2.png)
+![Delivery Performance](Dashboards/PKT_vis2.png)
 
 ### Page 3 — Warehouse Operations
-![Warehouse Operations](portfolio\Logistics Analysis Dashboard\Dashboards\PKT_vis3.png)
+![Warehouse Operations](Dashboards/PKT_vis3.png)
 
 ### Page 4 — Client Revenue Analysis
-![Client Revenue Analysis](portfolio\Logistics Analysis Dashboard\Dashboards\PKT_vis4.png)
+![Client Revenue Analysis](Dashboards/PKT_vis4.png)
 
 ---
 
@@ -135,7 +135,7 @@ Avg Pick Accuracy % = AVERAGE(fact_inventory[PickAccuracy_Pct])
 git clone https://github.com/yourusername/pkt-powerbi-dashboard.git
 ```
 
-2. Open `PKT_Group_PowerBI_Dataset.xlsx` — import all 6 sheets into Power BI Desktop
+2. Open `Simulated Datasets` — import all 6 sheets into Power BI Desktop
 
 3. In Power BI **Model View**, create these relationships:
 
