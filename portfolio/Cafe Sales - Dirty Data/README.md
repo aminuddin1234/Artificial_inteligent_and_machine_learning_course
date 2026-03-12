@@ -1,4 +1,4 @@
-### Full Stack Data Project (Cafe Sales)
+## Full Stack Data Project (Cafe Sales)
 
 
 * Project overview ~
