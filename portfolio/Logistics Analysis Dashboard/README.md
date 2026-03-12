@@ -130,10 +130,7 @@ Avg Pick Accuracy % = AVERAGE(fact_inventory[PickAccuracy_Pct])
 
 ## 🚀 How to Use
 
-1. Clone this repository
-```bash
-git clone https://github.com/yourusername/pkt-powerbi-dashboard.git
-```
+1. Download **only** the Logistics Analysis Dashboard folder.
 
 2. Open `Simulated Datasets` — import all 6 sheets into Power BI Desktop
 
